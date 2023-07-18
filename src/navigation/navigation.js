@@ -23,6 +23,10 @@ import analytics from '@react-native-firebase/analytics';
 // import {AppContext} from '../style/indexTheme';
 
 import TaskScreen from '../pages/TaskHome';
+import TaskAllScreen from '../pages/TaskAll';
+import TaskToDoScreen from '../pages/TaskToDo';
+import TaskProgressScreen from '../pages/TaskProgress';
+import TaskDoneScreen from '../pages/TaskDone';
 
 const Stack = createStackNavigator();
 
@@ -61,6 +65,26 @@ const Navigation = ({navigation}) => {
               options={ModalAnimate}
               name="TaskScreen"
               component={TaskScreen}
+            />
+            <Stack.Screen
+              options={ModalAnimate}
+              name="TaskAllScreen"
+              component={TaskAllScreen}
+            />
+            <Stack.Screen
+              options={ModalAnimate}
+              name="TaskToDoScreen"
+              component={TaskToDoScreen}
+            />
+            <Stack.Screen
+              options={ModalAnimate}
+              name="TaskProgressScreen"
+              component={TaskProgressScreen}
+            />
+            <Stack.Screen
+              options={ModalAnimate}
+              name="TaskDoneScreen"
+              component={TaskDoneScreen}
             />
           </Stack.Navigator>
         </NavigationContainer>

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {styles} from '../style/styleGlobal';
@@ -62,7 +63,7 @@ const TaskScreen = ({navigation}) => {
   };
 
   return (
-    <ScrollView>
+    <View style={{flex: 1}}>
       <View style={styles.container}>
         <View
           style={{
@@ -171,87 +172,150 @@ const TaskScreen = ({navigation}) => {
           </View>
         </View>
         <View style={styles.centered}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('TaskAllScreen')}
+            style={styles.containerCard}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <View style={styles.yellowball}></View>
+                <Text style={[styles.h2black, {textAlign: 'left'}]}>
+                  Total Task
+                </Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <Text style={[styles.h3gray, {textAlign: 'right'}]}>
+                  4 Task
+                </Text>
+                <IconIO
+                  name="ios-arrow-forward-outline"
+                  size={30}
+                  color={'rgba(0,0,0,0.25)'}
+                />
+              </View>
+            </View>
+          </TouchableOpacity>
           <View style={styles.containerCard}>
             <View
               style={{
                 flexDirection: 'row',
+                justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <View style={styles.yellowball}></View>
-              <Text style={styles.h2black}>Total Task</Text>
-              <View style={{width: (WW * 25) / 100}}></View>
-              <Text style={styles.h3gray}>4 Task</Text>
-              <IconIO
-                style={{marginLeft: (WW * 3) / 100}}
-                name="ios-arrow-forward-outline"
-                size={30}
-                color={'rgba(0,0,0,0.25)'}
-              />
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <View style={styles.redball}></View>
+                <Text style={[styles.h2black, {textAlign: 'left'}]}>
+                  To Do Task
+                </Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <Text style={[styles.h3gray, {textAlign: 'right'}]}>
+                  4 Task
+                </Text>
+                <IconIO
+                  name="ios-arrow-forward-outline"
+                  size={30}
+                  color={'rgba(0,0,0,0.25)'}
+                />
+              </View>
             </View>
           </View>
           <View style={styles.containerCard}>
             <View
               style={{
                 flexDirection: 'row',
+                justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <View style={styles.redball}></View>
-              <Text style={styles.h2black}>To Do Task</Text>
-              <View style={{width: (WW * 25) / 100}}></View>
-              <Text style={styles.h3gray}>8 Task</Text>
-              <IconIO
-                style={{marginLeft: (WW * 3) / 100}}
-                name="ios-arrow-forward-outline"
-                size={30}
-                color={'rgba(0,0,0,0.25)'}
-              />
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <View style={styles.greenball}></View>
+                <Text style={[styles.h2black, {textAlign: 'left'}]}>
+                  On Progress Task
+                </Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <Text style={[styles.h3gray, {textAlign: 'right'}]}>
+                  4 Task
+                </Text>
+                <IconIO
+                  name="ios-arrow-forward-outline"
+                  size={30}
+                  color={'rgba(0,0,0,0.25)'}
+                />
+              </View>
             </View>
           </View>
           <View style={styles.containerCard}>
             <View
               style={{
                 flexDirection: 'row',
+                justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <View style={styles.greenball}></View>
-              <Text style={styles.h2black}>On Progress Task</Text>
-              <View style={{width: (WW * 10) / 100}}></View>
-              <Text style={styles.h3gray}>8 Task</Text>
-              <IconIO
-                style={{marginLeft: (WW * 3) / 100}}
-                name="ios-arrow-forward-outline"
-                size={30}
-                color={'rgba(0,0,0,0.25)'}
-              />
-            </View>
-          </View>
-          <View style={styles.containerCard}>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <View style={styles.blueball}></View>
-              <Text style={styles.h2black}>Done Task</Text>
-              <View style={{width: (WW * 25) / 100}}></View>
-              <Text style={styles.h3gray}>8 Task</Text>
-              <IconIO
-                style={{marginLeft: (WW * 3) / 100}}
-                name="ios-arrow-forward-outline"
-                size={30}
-                color={'rgba(0,0,0,0.25)'}
-              />
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <View style={styles.blueball}></View>
+                <Text style={[styles.h2black, {textAlign: 'left'}]}>
+                  Done Task
+                </Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <Text style={[styles.h3gray, {textAlign: 'right'}]}>
+                  4 Task
+                </Text>
+                <IconIO
+                  name="ios-arrow-forward-outline"
+                  size={30}
+                  color={'rgba(0,0,0,0.25)'}
+                />
+              </View>
             </View>
           </View>
         </View>
       </View>
       <BottomNavigation
+        style={styles.bottomNavigation}
         navigationState={{index, routes}}
         onIndexChange={setIndex}
         renderScene={renderScene}
         theme={{colors: {secondaryContainer: '#4483f9'}}}
       />
-    </ScrollView>
+    </View>
   );
 };
 

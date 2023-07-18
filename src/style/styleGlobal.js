@@ -134,6 +134,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: (WH * 1) / 100,
   },
+  boxSpacer2: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   yellowball: {
     width: 30,
     height: 30,
@@ -173,5 +177,24 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: (WW * 3) / 100,
+  },
+  containerBoxTaskList: {
+    width: (WW * 40) / 100,
+    height: (WH * 8) / 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    borderColor: color.Blue,
+    borderWidth: 2,
+    margin: (WW * 3) / 100,
+    padding: (WW * 1) / 100,
+    backgroundColor: color.BlueMed,
+  },
+  bottomNavigation: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    width: '100%',
   },
 });
